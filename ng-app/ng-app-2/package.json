@@ -1,0 +1,42 @@
+{
+  "name": "ng-apps",
+  "version": "0.0.0",
+  "scripts": {
+    "s2:login": "npm config set @s2global:registry=https://s2global-585953033457.d.codeartifact.us-east-2.amazonaws.com/npm/S2/ && aws codeartifact login --tool npm --repository S2 --domain-owner 585953033457 --domain s2global --namespace @s2global --region us-east-2",
+    "cs:login": "aws codeartifact login --tool npm --repository certscanui --domain s2global --domain-owner 585953033457 --namespace @cs --region us-east-2",
+    "preinsta": "npm config set @s2global:registry=https://s2global-585953033457.d.codeartifact.us-east-2.amazonaws.com/npm/S2/ ; aws codeartifact login --tool npm --repository S2 --domain-owner 585953033457 --domain s2global --namespace '@s2global' --region us-east-2",
+    "preinstall": "npm run cs:login & npm run co:login",
+    "ng": "ng",
+    "start": "ng serve --port 4100",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "^16.0.0",
+    "@angular/common": "^16.0.0",
+    "@angular/compiler": "^16.0.0",
+    "@angular/core": "^16.0.0",
+    "@angular/forms": "^16.0.0",
+    "@angular/platform-browser": "^16.0.0",
+    "@angular/platform-browser-dynamic": "^16.0.0",
+    "@angular/router": "^16.0.0",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.13.0"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^16.0.6",
+    "@angular/cli": "~16.0.6",
+    "@angular/compiler-cli": "^16.0.0",
+    "@types/jasmine": "~4.3.0",
+    "jasmine-core": "~4.6.0",
+    "karma": "~6.4.0",
+    "karma-chrome-launcher": "~3.2.0",
+    "karma-coverage": "~2.2.0",
+    "karma-jasmine": "~5.1.0",
+    "karma-jasmine-html-reporter": "~2.0.0",
+    "typescript": "~5.0.2"
+  }
+}
